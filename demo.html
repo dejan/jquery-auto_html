@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Demo of jquery.auto_html.js</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script> 
+    <script src="jquery.auto_html.js" type="text/javascript"></script> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  </head> 
+  <body>
+    <div class='comment'>My pet project: http://vukajlija.com/images/logo.png
+http://www.youtube.com/watch?v=8JMO-hxYRq4</div>
+  </body>
+  <script type="text/javascript">
+    $('.comment').each(function(){
+      $(this).simpleFormat();
+      $(this).youtube({width:500, height:400});
+      $(this).link();
+    })
+  </script>
+</html>
+
+
