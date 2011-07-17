@@ -7,15 +7,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
   </head> 
   <body>
-    <div class='comment'>My pet project: http://vukajlija.com/images/logo.png
+    <div class='comment'>My pet project: 
+      http://vukajlija.com/images/logo.png
 http://www.youtube.com/watch?v=8JMO-hxYRq4</div>
   </body>
   <script type="text/javascript">
-    $('.comment').each(function(){
-      $(this).simpleFormat();
-      $(this).youtube({width:500, height:400});
-      $(this).link();
-    })
+    $('.comment').
+      simpleFormat().
+      image().
+      youtube({width:500, height:400}).
+      link();
   </script>
 </html>
 
