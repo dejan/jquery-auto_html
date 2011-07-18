@@ -6,11 +6,11 @@ jQuery port of Rails' extension [auto_html](http://github.com/dejan/auto_html)
 ## Example usage
 
     <script type="text/javascript">
-      $('.comment').
-        simpleFormat().
-        image().
-        youtube({width:500, height:400}).
-        link();
+      $('.comment')
+        .simpleFormat()
+        .image()
+        .youtube({width:500, height:400})
+        .link();
     </script>
 
 ## Credits
