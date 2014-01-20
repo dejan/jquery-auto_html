@@ -9,21 +9,22 @@
     });
   }
 
-  $.fn.image = function() {
+  $.fn.image = function(options) {
     return this.each(function() {
+      var opts= $.extend({width: '200px'}, options);
       var text = $(this).html();
       var regex = /http:\/\/.+\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/gi
-      var html = text.replace(regex, "<img src='$&' alt=''/>");
+      var html = text.replace(regex, "<img src='$&' alt='' width='" + opts.width + "'/>");
       $(this).html(html);
     });
   }
 
   $.fn.youtube = function(options) {
     return this.each(function() {
-      var options = $.extend({width:390, height:250}, options);
+      var opts= $.extend({width:390, height:250}, options);
       var text = $(this).html();
       var regex = /http:\/\/(www.)?youtube\.com\/watch\?v=([A-Za-z0-9._%-]*)(\&\S+)?/
-      var html = text.replace(regex, '<iframe class="youtube-player" type="text/html" width="' + options.width + '" height="' + options.height + '" src="http://www.youtube.com/embed/$2" frameborder="0"></iframe>');
+      var html = text.replace(regex, '<iframe class="youtube-player" type="text/html" width="' + opts.width + '" height="' + opts.height + '" src="http://www.youtube.com/embed/$2" frameborder="0"></iframe>');
       $(this).html(html);
     });
   }
