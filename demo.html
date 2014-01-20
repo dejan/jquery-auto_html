@@ -5,12 +5,44 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script> 
     <script src="jquery.auto_html.js" type="text/javascript"></script> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <style type="text/css">
+      pre, .comment {
+        background:#eee; 
+        padding: 20px
+      }
+    </style>
+
   </head> 
   <body>
-    <div class='comment'>
-      http://gogreece2014.com/wp-content/uploads/2013/09/mykonos8.jpg
+<h2>Given this code:</h2>
+<pre>
+$('.comment')
+  .simpleFormat()
+  .image({width: '500px'})
+  .youtube({width:500, height:400})
+  .link();
+</pre>
 
-      And you will go to Mykonos
+    <h2>And this content of a div with class 'comment':</h2>
+    <pre>http://gogreece2014.com/wp-content/uploads/2013/09/mykonos8.jpg
+
+And you will go to Mykonos
+With a vision of a gentle coast
+And a sun to maybe dissipate
+Shadows of the mess you made
+
+http://www.youtube.com/watch?v=DT-dxG4WWf4
+</pre>
+
+
+<h2>This will be the output:</h2>
+
+<pre><xmp><p><img src="http://gogreece2014.com/wp-content/uploads/2013/09/mykonos8.jpg" alt="" width="500px"></p><p>And you will go to Mykonos<br>With a vision of a gentle coast<br>And a sun to maybe dissipate<br>Shadows of the mess you made</p><p><iframe class="youtube-player" type="text/html" width="500" height="400" src="http://www.youtube.com/embed/DT-dxG4WWf4" frameborder="0"></iframe></xmp></pre>
+
+<h2>And it will look like this:</h2>
+<div class='comment'>http://gogreece2014.com/wp-content/uploads/2013/09/mykonos8.jpg
+
+And you will go to Mykonos
 With a vision of a gentle coast
 And a sun to maybe dissipate
 Shadows of the mess you made
