@@ -13,7 +13,7 @@
     return this.each(function() {
       var opts= $.extend({width: '200px'}, options);
       var text = $(this).html();
-      var regex = /http:\/\/.+\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/gi
+      var regex = /(http|https):\/\/.+\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/gi
       var html = text.replace(regex, "<img src='$&' alt='' width='" + opts.width + "'/>");
       $(this).html(html);
     });
@@ -23,7 +23,7 @@
     return this.each(function() {
       var opts= $.extend({width:390, height:250}, options);
       var text = $(this).html();
-      var regex = /http:\/\/(www.)?youtube\.com\/watch\?v=([A-Za-z0-9._%-]*)(\&\S+)?/
+      var regex = /(http|https):\/\/(www.)?youtube\.com\/watch\?v=([A-Za-z0-9._%-]*)(\&\S+)?/
       var html = text.replace(regex, '<iframe class="youtube-player" type="text/html" width="' + opts.width + '" height="' + opts.height + '" src="http://www.youtube.com/embed/$2" frameborder="0"></iframe>');
       $(this).html(html);
     });
